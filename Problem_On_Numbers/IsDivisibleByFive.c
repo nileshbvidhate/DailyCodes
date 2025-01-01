@@ -1,29 +1,34 @@
 #include<stdio.h>
+#include<stdbool.h>
 
-int MultiplicationOfNumbers(int iValue1, int iValue2)
+bool isDivisibleByFive(int iValue)
 {
-    int iAns = 0;
+    bool bFlag = false;
+    if(iValue % 5 == 0)
+    {
+        bFlag = true;
+    }
 
-    iAns = iValue1 * iValue2;
-    
-    return iAns;
+    return bFlag;
 }
 
 int main()
 {
-    int iNo1 = 0;
-    int iNo2 = 0;
-    int iMult = 0;
+    int iNo = 0;
+    bool bFlag = false;
 
-    printf("Enter first number : \n");
-    scanf("%d",&iNo1);
+    printf("Enter  number : \n");
+    scanf("%d",&iNo);
 
-    printf("Enter second number : \n");
-    scanf("%d",&iNo2);
-
-    iMult = MultiplicationOfNumbers(iNo1,iNo2);
-
-    printf("Multiplication is : %d\n",iMult);
+    bFlag = isDivisibleByFive(iNo);
+    if(bFlag)
+    {
+        printf("%d is divisible by 5\n",iNo);
+    }
+    else
+    {
+        printf("%d is not divisible by 5\n",iNo);
+    }
 
     return 0;
 }
